@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Bathroom Accessories</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="index.html">
+	<link rel="stylesheet" type="text/css" href="kitchen.html">
+	<link rel="stylesheet" type="text/css" href="decoration.html">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		nav{
+	width: 100%;
+	display: flex;
+	background-color: #7d7978;
+	height: 80px;
+	justify-content: space-evenly;
+	align-items: center;
+	color: white;
+}
+.nav-heading{
+	font-size: 30px;
+	font-weight: 700;
+}
+.navbar-list ul{
+	display: flex;
+}
+.navbar-list ul li{
+	list-style-type: none;
+	padding: 0 20px;
+}
+.navbar-list ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+}
+.nav-icons .fa-solid{
+	padding: 0 10px;
+}
+.nav-icons{
+	display: flex;
+}
+.kitchen{
+	display: none;
+}
+.bath{
+	display: none;
+}
+.decor{
+	display: none;
+}
+.submenu-kit ul,
+.submenu-bat ul,
+.submenu-deco ul
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 120px;
+	border: 2px solid #e0d0cc;
+	text-align: center;
+	background-color: #7d7978;
+	margin-top: 20px;
+}
+.submenu-kit ul li,
+.submenu-bat ul li,
+.submenu-deco ul li
+{
+	padding: 10px 0;
+}
+.nav-btn{
+	display: none;
+}
+
+@media (max-width:900px){
+	nav{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 120px;
+	}
+	.navbar-list ul li{
+		list-style-type: none;
+		padding: 0 10px;
+	}
+}
+@media (max-width:700px){
+	nav{
+		width: 100%;
+	}
+	.navbar-list{
+/*		width: 100%;*/
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		text-align: center;
+
+
+}
+	.navbar-list ul {
+/*		width: 100%;*/
+		margin-top: 40px;
+		flex-direction: column;
+		position: absolute;
+		top: 100px;
+/*		border: 2px solid black;*/
+		background-color: #7d7978;
+/*		left: 40px;*/
+		width: 130px;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.nav-heading{
+		font-size: 20px;
+	}
+	.navbar-list ul li{
+		padding: 10px 0;
+	}
+	.nav-icons{
+		font-size: 20px;
+/*		margin-top: 20px;*/
+	}
+	.navbar-list ul li a{
+		font-size: 15px;
+	}
+	.nav-icons .fa-solid{
+		padding: 0 10px;
+	}
+	.hide{
+		display: none;
+	}
+	.nav-btn{
+		display: block;
+		font-size: 20px;
+		text-align: center;
+		width: 40px;
+		background-color: black;
+	}
+	.submenu-kit,
+	.submenu-bat,
+	.submenu-deco
+	{
+		position: absolute;
+		top: -80px;
+		left: 140px;
+	}
+	
+}
+
+		.container-top{
+			width: 100%;
+			height: 60px;
+			background-color: rgb(96 105 93);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			font-size: 22px;
+			font-weight: 600;
+			color: white;
+		}
+		.container1{
+			display: flex;
+		}
+		.box1{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			font-size: 17px;
+		}
+		.box1 ul{
+			list-style-type: none;
+		}
+		.box1 ul li{
+			width: 400px;
+			padding: 10px 0;
+		}
+		.box1 ul li h2{
+			font-size: 30px;
+		}
+		.box1 ul li button{
+			padding: 10px 40px;
+			border-radius: 20px;
+			background-color:  rgb(96 105 93);
+			color: white;
+			font-size: 16px;
+		}
+		.box1 ul li button:hover{
+			background-color: transparent;
+			color: black;
+		}
+		.box2{
+			width: 50%;
+			height: 60vh;
+		}
+		.box2 img{
+			width: 100%;
+			height: 100%;
+		}
+		.left-img{
+			width: 50%;
+			height: 60vh;
+		}
+		.left-img img{
+			width: 100%;
+			height: 100%;
+		}
+		.right-ctn{
+			width: 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			text-align: center;
+			font-size: 17px;
+		}
+		.right-ctn ul{
+			list-style-type: none;
+		}
+		.right-ctn ul li{
+			width: 400px;
+			padding: 10px 0;
+		}
+		.right-ctn ul li h2{
+			font-size: 30px;
+		}
+		.right-ctn ul li button{
+			padding: 10px 40px;
+			border-radius: 20px;
+			background-color:  rgb(96 105 93);
+			color: white;
+			font-size: 16px;
+		}
+		.right-ctn ul li button:hover{
+			background-color: transparent;
+			color: black;
+		}
+		@media (max-width:991px){
+			.box2,.left-img{
+				width: 50%;
+				height: 40vh;
+			}
+			.box2 img, .left-img img{
+				width: 100%;
+				height: 100%;
+			}
+
+		}
+		@media (max-width:750px){
+			.container-top{
+				font-size: 17px;
+			}
+			.container1{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				margin-top: 35px;
+/*				border: 2px solid red;*/
+			}
+			.box1,.left-img{
+				width: 70%;
+/*				border: 2px solid red;*/
+			}
+			.box2, .right-ctn{
+				width: 70%;
+/*				border: 2px solid red;*/
+			}
+			.box1 ul li h2, .right-ctn ul li h2{
+				font-size: 20px;
+			}
+			.box1 ul li, .right-ctn ul li{
+				width: 300px;
+			}
+		}
+		#stand-details,
+		#mirror-details,
+		#faucets-details,
+		#hanger-details{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		.stand-heading{
+			font-size: 18px;
+			width: 300px;
+			text-align: center;
+		}
+		.stand-heading ul{
+			list-style-type: none;
+		}
+		.stand-heading ul li{
+			padding: 8px 0;
+		}
+		.stand-info{
+
+			width: 70%;
+/*			border: 2px solid black;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.stand-info td{
+			padding: 5px 10px;
+		}
+		.info-heading{
+			margin-top: 40px;
+			margin-bottom: 10px;
+			text-decoration: underline;
+		}
+		.stand-abt{
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			width: 60%;
+			padding: 20px 0;
+		}
+		.abt-list ul li{
+			padding: 8px 0;
+			font-size: 17px;
+		}
+		.abt-heading{
+			padding: 10px 0;
+			text-decoration: underline;
+		}
+		@media (max-width:600px){
+			.stand-heading{
+				font-size: 15px;
+			}
+		}
+		.footer{
+			width: 100%;
+		}
+		.footer .container{
+			width: 100%;
+	background-color: #e8e59b;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.footer .container .ft-box1{
+/*	border: 2px solid black;*/
+	width: 400px;
+	text-align: center;
+	padding: 60px 0;
+
+}
+.footer .container .ft-box1 ul li{
+	list-style-type: none;
+}
+.footer .container .input{
+	padding: 5px 5px;
+}
+.footer .container button{
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: black;
+	color: white;
+}
+.footer .container button:hover{
+	background-color: white;
+	color: black;
+}
+.footer .container .ft-box{
+	width: 150px;
+/*	border: 2px solid black;*/
+}
+.footer .container .ft-box ul{
+	list-style-type: none;
+}
+.footer .container .ft-box ul li{
+	padding: 10px 0;
+}
+@media (max-width:680px){
+	.footer .container{
+		flex-direction: column;
+	}
+	.footer .container .ft-box1{
+		width: 330px;
+	}
+	.footer .container .ft-box{
+		width: 300px;
+		text-align: center;
+		font-size: 17.5px;
+		margin-top: 25px;
+	}
+	.footer .container .ft-box2,.ft-box3{
+		border-bottom: 2px solid black;
+
+	}
+}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="nav-heading">The Classic Home</div>
+		<div class="navbar-list hide">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="kitchen-hover"><a href="#">Kitchen Items</a>
+					<div class="submenu-kit kitchen">
+						<ul>
+							<li><a href="kitchen.html #kitchen-ctn">Kitchen products</a></li>
+							<li><a href="kitchen.html #kitchen-steel">Stainless Steel</a></li>
+							<li><a href="kitchen.html #wooden-set">Wooden Cutlery Set</a></li>
+							<li><a href="kitchen.html #container-ctn">Kitchen container Set</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="bath-hover"><a href="#">Bathroom Accessories</a>
+					<div class="submenu-bat bath">
+						<ul>
+							<li><a href="bath.html">Bath Accessories</a></li>
+							<li><a href="bath.html #stand-nav">Bathroom Stands</a></li>
+							<li><a href="bath.html #mirror-nav">LED Mirrors</a></li>
+							<li><a href="bath.html #faucets-nav">Faucets</a></li>
+							<li><a href="bath.html #hanger-nav">Towel Hangers</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="decoration-hover"><a href="#">Decoration things</a>
+					<div class="submenu-deco decor">
+						<ul>
+							<li><a href="decoration.html">All Decors</a></li>
+							<li><a href="decoration.html #Vases-product">Vases</a></li>
+							<li><a href="decoration.html #lamp-product">Lamps</a></li>
+							<li><a href="decoration.html #walldecor-product">Wall decors</a></li>
+							<li><a href="decoration.html #curtain-product">Curtains</a></li>
+							<li><a href="decoration.html #bookshelve-product">Bookshelves</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li><a href="mission.html">Our Mission</a></li>
+				
+			</ul>
+		</div>
+		<div class="nav-icons"><i class="fa-solid fa-bag-shopping"></i>
+		<i class="fa-solid fa-truck"></i>
+		<div class="nav-btn"><i class="fa-solid fa-bars"></i></div></div>
+	</nav>
+	<script>
+		document.querySelector(".nav-btn").onclick=function(){
+			document.querySelector(".navbar-list").classList.toggle("hide");
+		}
+		document.querySelector(".kitchen-hover").onclick=function(){
+			document.querySelector(".submenu-kit").classList.toggle("kitchen");
+		}
+		document.querySelector(".bath-hover").onclick=function(){
+			document.querySelector(".submenu-bat").classList.toggle("bath");
+		}
+		document.querySelector(".decoration-hover").onclick=function(){
+			document.querySelector(".submenu-deco").classList.toggle("decor");
+		}
+	</script>
+	<div class="container">
+		<div class="container-top">
+			Daily Deals Available | Offers are Coming Soon
+		</div>
+		<div id="stand-nav">
+		<div class="container1">
+			
+			<div class="box1 box">
+				<ul>
+					<li><h2>Bathroom Stand</h2></li>
+					<li>Towels, Shampoo Bottles and Clothes</li>
+					<li>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</li>
+					<li><a href="#stand-details"><button>See More</button></a></li>
+				</ul>
+			</div>
+			<div class="box2 box">
+				<img src="bathstand.jpg">
+			</div>
+			</div>
+		</div>
+		<div id="mirror-nav">
+		<div class="container1">
+			
+			<div class="left-img">
+				<img src="mirror.jpg">
+			</div>
+			<div class="right-ctn">
+				<ul>
+					<li><h2>LED Mirror</h2></li>
+					<li>LED Lights, Brightness and Clear View</li>
+					<li>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</li>
+					<li><a href="#mirror-details"><button>See More</button></a></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<div id="faucets-nav">
+		<div class="container1">
+		
+			<div class="box1 box">
+				<ul>
+					<li><h2>Faucets</h2></li>
+					<li>Easy Handle, Fast Water Flow and Thin Pipe</li>
+					<li>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</li>
+					<li><a href="#faucets-details"><button>See More</button></a></li>
+				</ul>
+			</div>
+			<div class="box2 box">
+				<img src="faucet.jpg">
+			</div>
+			</div>
+		</div>
+		<div id="hanger-nav">
+		<div class="container1">
+			
+			<div class="left-img">
+				<img src="hanger.jpg">
+			</div>
+			<div class="right-ctn">
+				<ul>
+					<li><h2>Towel Hanger</h2></li>
+					<li>Modern, Space Saving and Powder Coated</li>
+					<li>I'm a paragraph. Click here to add your own text and edit me. I’m a great place for you to tell a story and let your users know a little more about you.</li>
+					<li><a href="#hanger-details"><button>See More</button></a></li>
+				</ul>
+			</div>
+			</div>
+		</div>
+		<div id="stand-details">
+			
+			<div class="stand-heading">
+				<ul>
+					<li><h2 style="text-decoration: underline;">Bathroom Stand</h2></li>
+					<li>SPACELEAD Slim Storage Cart 3 Tier,Bathroom Organizer Rolling Utility,Mobile Shelving Unit Slide Out for Office, Kitchen, Laundry Room & Narrow Places,Black</li>
+					<li><a href="#">Visit the SPACELEAD Store</a></li>
+					<li>4.1<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+					 4,606 ratings</li>
+				</ul>
+			</div>
+			
+				<div class="info-heading"><h2>Product Details</h2></div>
+			<div class="stand-info">
+				<table border="5px">
+					<tr>
+						<td>Product Dimensions</td>
+						<td>15.3"D x 4.9"W x 26.1"H</td>
+					</tr>
+					<tr>
+						<td>Shelf Type</td>
+						<td>Tiered Shelf</td>
+					</tr>
+					<tr>
+						<td>Frame Material</td>
+						<td>Plastic</td>
+					</tr>
+					<tr>
+						<td>Brand</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Modern</td>
+					</tr>
+					<tr>
+						<td>Maximum Weight Recommendation</td>
+						<td>100 Kilograms</td>
+					</tr>
+					<tr>
+						<td>Size</td>
+						<td>15.3X4.9X26.1 inches</td>
+					</tr>
+					<tr>
+						<td>Product Care Instructions</td>
+						<td>Wipe with Dry Cloth</td>
+					</tr>
+					<tr>
+						<td>Assembly Required</td>
+						<td>Yes</td>
+					</tr>
+					<tr>
+						<td>Number of Shelves</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Manufacturer</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>UPC</td>
+						<td>757837821789</td>
+					</tr>
+					<tr>
+						<td>Item Weight</td>
+						<td>2.45 pounds</td>
+					</tr>
+					<tr>
+						<td>ASIN</td>
+						<td>B09F6JPYSY</td>
+					</tr>
+					<tr>
+						<td>Item model number</td>
+						<td>SAKSC301B</td>
+					</tr>
+					<tr>
+						<td>Customer Reviews</td>
+						<td>4.1</td>
+					</tr>
+					<tr>
+						<td>Best Sellers Rank</td>
+						<td>#920 in Office Products (See Top 100 in Office Products)#5 in Utility Carts</td>
+					</tr>
+					<tr>
+						<td>Date First Available</td>
+						<td>September 1, 2021</td>
+					</tr>
+				</table>
+			</div>
+			<div class="stand-abt">
+				<div class="abt-heading"><h2>About this item</h2></div>
+				<div class="abt-list">
+					<ul>
+						<li>Flexible Slim Storage Cart: The bathroom rolling utility cart is equipped with 360°rotating wheels, the storage cart can be moved to any corner of the house to store items. You can flexibly use it for storage in office, bathroom, laundry room, kitchen, narrow places,etc</li>
+						<li>Abundant Storage Space: The bathroom storage cart provides an extra layer of compartments, you can easily and rationally plan your space to store the required items, and quickly access them at a glance. The side hoops (included) can also provide you with more external storage space</li>
+						<li>Multifunctional Storage Cart: Rolling storage utility cart is not just a cart, it can be adjusted to 2 or 3 layer shelf after removing the casters. The partical small utility cart can be used as bathroom dresser, kitchen spice rack to keep your space organized.</li>
+						<li>Mesh Hollow Design: The storage trolley bottom adopts a mesh hollow, bid farewell to the residue of stagnant water during use, and keep things dry at all times</li>
+						<li>Easy to Install: The mobile utility cart is made of high-quality plastic, providing you with stable and durable quality. At the same time it is very easy to install, so you can easily install successfully without additional tools</li>
+						<li>MAKE THE MOST OF YOUR SPACE: This slim rolling cart is a great way to organize small spaces. Make clever use of the gap between toilet and sink, washer and dryer, or refrigerator and counter with this slim storage cart. Small rolling cart will maximize space and add function.</li>
+						<li>SPACE-SAVING SHELVES: This bathroom storage cart can provide extra storage for limited spaces if you need to store cleaning supplies in the kitchen or use the bathroom cart storage cart as bathroom storage for toiletries, towels, or cosmetics.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="mirror-details">
+			
+			<div class="stand-heading">
+				<ul>
+					<li><h2 style="text-decoration: underline;">LED Mirror</h2></li>
+					<li>LOAAO 36X36 LED Bathroom Mirror with Lights, Anti-Fog, Dimmable, Backlit + Front Lit, Lighted Bathroom Vanity Mirror for Wall, Memory Function, Tempered Glass, Safe to Use, ETL Listed</li>
+					<li><a href="#">Visit the LOAAO Store</a></li>
+					<li>5.0<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+					 4,606 ratings</li>
+				</ul>
+			</div>
+			
+				<div class="info-heading"><h2>Product Details</h2></div>
+			<div class="stand-info">
+				<table border="5px">
+					<tr>
+						<td>Product Dimensions</td>
+						<td>15.3"D x 4.9"W x 26.1"H</td>
+					</tr>
+					<tr>
+						<td>Shelf Type</td>
+						<td>Tiered Shelf</td>
+					</tr>
+					<tr>
+						<td>Frame Material</td>
+						<td>Plastic</td>
+					</tr>
+					<tr>
+						<td>Brand</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Modern</td>
+					</tr>
+					<tr>
+						<td>Maximum Weight Recommendation</td>
+						<td>100 Kilograms</td>
+					</tr>
+					<tr>
+						<td>Size</td>
+						<td>15.3X4.9X26.1 inches</td>
+					</tr>
+					<tr>
+						<td>Product Care Instructions</td>
+						<td>Wipe with Dry Cloth</td>
+					</tr>
+					<tr>
+						<td>Assembly Required</td>
+						<td>Yes</td>
+					</tr>
+					<tr>
+						<td>Number of Shelves</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Manufacturer</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>UPC</td>
+						<td>757837821789</td>
+					</tr>
+					<tr>
+						<td>Item Weight</td>
+						<td>2.45 pounds</td>
+					</tr>
+					<tr>
+						<td>ASIN</td>
+						<td>B09F6JPYSY</td>
+					</tr>
+					<tr>
+						<td>Item model number</td>
+						<td>SAKSC301B</td>
+					</tr>
+					<tr>
+						<td>Customer Reviews</td>
+						<td>4.1</td>
+					</tr>
+					<tr>
+						<td>Best Sellers Rank</td>
+						<td>#920 in Office Products (See Top 100 in Office Products)#5 in Utility Carts</td>
+					</tr>
+					<tr>
+						<td>Date First Available</td>
+						<td>September 1, 2021</td>
+					</tr>
+				</table>
+			</div>
+			<div class="stand-abt">
+				<div class="abt-heading"><h2>About this item</h2></div>
+				<div class="abt-list">
+					<ul>
+						<li>【Backlit+Front-lit, Double Lighting Sources】: loaao led bathroom mirror is designed with both backlight and front light; Double lighting sources designed to make the mirror bright enough for doing makeup; skin care; shaving and dressing up; Super bright</li>
+						<li>【Dimmable & 3 Color Temperature】: The brightness is adjustable for the lighted bathroom mirror; Simply long press the touch switch to adjust the brightness; 3 color temperature for option; warm light (3000 K); natural light (4000 K); white light (6000 K)</li>
+						<li>【Defog Feature & Memory Function】: Fogless mirror with defog function; No bother to wipe the mirror down after a shower; Anti fog starts quick and one hour auto-off; Memory function helps remember your last setting; No need to reset each time</li>
+						<li>【Easy to Install, Plug-in/Hardwired】: This loaao bathroom mirror with lights is easy to install with two z-bar brackets; The mirror can be powered by hardwired or plugged in; Also easy to clean ( hangs vertically or horizontally)</li>
+						<li>【Tempered Glass, Shatter-Proof, Safety and Durable】: loaao led bathroom mirror built with 5 mm tempered glass features shatter-proof; explosion-proof; Sturdy; durable and safe to use; The mirror provide clear reflection with no distortion</li>
+						<li>Notes: Please note that the anti-fog feature works from the center to the edge. For energy-saving, the mirror is designed with partial heating pad located on the center of the mirror but not over the whole mirror. Therefore, the defogger feature works better on the center and Decreasing from the center to the edge (the heating pads varies among different sizes)</li>
+						
+					</ul>
+				</div>
+			</div>
+			<div id="faucets-details">
+			
+			<div class="stand-heading">
+				<ul>
+					<li><h2 style="text-decoration: underline;">Faucets</h2></li>
+					<li>Kitchen Faucet with Pull Down Sprayer Brushed Nickel, High Arc Single Handle Sink Deck Plate, Commercial Modern rv Stainless Steel Faucets, Grifos De Cocina</a></li>
+					<li>5.0<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+					 4,606 ratings</li>
+				</ul>
+			</div>
+			
+				<div class="info-heading"><h2>Product Details</h2></div>
+			<div class="stand-info">
+				<table border="5px">
+					<tr>
+						<td>Product Dimensions</td>
+						<td>15.3"D x 4.9"W x 26.1"H</td>
+					</tr>
+					<tr>
+						<td>Shelf Type</td>
+						<td>Tiered Shelf</td>
+					</tr>
+					<tr>
+						<td>Frame Material</td>
+						<td>Plastic</td>
+					</tr>
+					<tr>
+						<td>Brand</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Modern</td>
+					</tr>
+					<tr>
+						<td>Maximum Weight Recommendation</td>
+						<td>100 Kilograms</td>
+					</tr>
+					<tr>
+						<td>Size</td>
+						<td>15.3X4.9X26.1 inches</td>
+					</tr>
+					<tr>
+						<td>Product Care Instructions</td>
+						<td>Wipe with Dry Cloth</td>
+					</tr>
+					<tr>
+						<td>Assembly Required</td>
+						<td>Yes</td>
+					</tr>
+					<tr>
+						<td>Number of Shelves</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Manufacturer</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>UPC</td>
+						<td>757837821789</td>
+					</tr>
+					<tr>
+						<td>Item Weight</td>
+						<td>2.45 pounds</td>
+					</tr>
+					<tr>
+						<td>ASIN</td>
+						<td>B09F6JPYSY</td>
+					</tr>
+					<tr>
+						<td>Item model number</td>
+						<td>SAKSC301B</td>
+					</tr>
+					<tr>
+						<td>Customer Reviews</td>
+						<td>4.1</td>
+					</tr>
+					<tr>
+						<td>Best Sellers Rank</td>
+						<td>#920 in Office Products (See Top 100 in Office Products)#5 in Utility Carts</td>
+					</tr>
+					<tr>
+						<td>Date First Available</td>
+						<td>September 1, 2021</td>
+					</tr>
+				</table>
+			</div>
+			<div class="stand-abt">
+				<div class="abt-heading"><h2>About this item</h2></div>
+				<div class="abt-list">
+					<ul>
+						<li>EASY INSTALLATION:This kitchen faucets is easy to install DIY in less than 20 minutes without a plumber, saving money and time. Faucet function and finish are covered under LOUEVIDO’s Limited Lifetime warranty.</li>
+						<li>EASY CLEANING:Reflective finishes are plated and brushed finishes use a process called Physical Vapor Deposition (PVD) - both of which are guaranteed to last a lifetime. This type of finish is perfect for resist fingerprints spots and other smudges.</li>
+						<li>DURABLE KITCHEN FAUCET DESIGN:LOUEVIDO's Upgraded 4.0 Drip-free ceramic disc mixing valve cartridge Technology utilizes a ceramic disc valve with a real diamond coating to produce a faucet that will last up to 6 million uses. That's an amazing 10 times the industry standard, guaranteeing a lifetime of leak-free, trouble-free performance.</li>
+						<li>EASY to OPERATE:Sprayer features push button controls to move from an aerated stream to a powerful spray, Pause button able to stop the flow of water from the spray head without turning off the faucet, Spout swivels 360 degrees to cover the entire sink. if you prefer a clean sink deck without a sidespray or additional accessories, a pull out faucet may be the right solution.</li>
+						<li>Multiple Application Sprayer Head:Kitchen sink faucet setting (spray / flow / pause) It can meet a variety of cleaning tasks, and can be suspended immediately in a variety of task modes,Susbie kitchen faucet to help you solve water problems.</li>
+					</ul>
+				</div>
+			</div>
+			<div id="hanger-details">
+			
+			<div class="stand-heading">
+				<ul>
+					<li><h2 style="text-decoration: underline;">Towel Hanger</h2></li>
+					<li>Towel Rack for Bathroom - 24" Rustproof Towel Holder, Sturdy Towel Bar Wall Mounted, Space-Saving Towel Hanger, Bathroom Accessories, Home Decor, Apparment Essentials, Black</li>
+					<li><a href="#">Visit the LOAAO Store</a></li>
+					<li>5.0<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+							<i class="fa-solid fa-star"></i>
+					 4,606 ratings</li>
+				</ul>
+			</div>
+			
+				<div class="info-heading"><h2>Product Details</h2></div>
+			<div class="stand-info">
+				<table border="5px">
+					<tr>
+						<td>Product Dimensions</td>
+						<td>15.3"D x 4.9"W x 26.1"H</td>
+					</tr>
+					<tr>
+						<td>Shelf Type</td>
+						<td>Tiered Shelf</td>
+					</tr>
+					<tr>
+						<td>Frame Material</td>
+						<td>Plastic</td>
+					</tr>
+					<tr>
+						<td>Brand</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>Color</td>
+						<td>Black</td>
+					</tr>
+					<tr>
+						<td>Style</td>
+						<td>Modern</td>
+					</tr>
+					<tr>
+						<td>Maximum Weight Recommendation</td>
+						<td>100 Kilograms</td>
+					</tr>
+					<tr>
+						<td>Size</td>
+						<td>15.3X4.9X26.1 inches</td>
+					</tr>
+					<tr>
+						<td>Product Care Instructions</td>
+						<td>Wipe with Dry Cloth</td>
+					</tr>
+					<tr>
+						<td>Assembly Required</td>
+						<td>Yes</td>
+					</tr>
+					<tr>
+						<td>Number of Shelves</td>
+						<td>3</td>
+					</tr>
+					<tr>
+						<td>Manufacturer</td>
+						<td>SPACELEAD</td>
+					</tr>
+					<tr>
+						<td>UPC</td>
+						<td>757837821789</td>
+					</tr>
+					<tr>
+						<td>Item Weight</td>
+						<td>2.45 pounds</td>
+					</tr>
+					<tr>
+						<td>ASIN</td>
+						<td>B09F6JPYSY</td>
+					</tr>
+					<tr>
+						<td>Item model number</td>
+						<td>SAKSC301B</td>
+					</tr>
+					<tr>
+						<td>Customer Reviews</td>
+						<td>4.1</td>
+					</tr>
+					<tr>
+						<td>Best Sellers Rank</td>
+						<td>#920 in Office Products (See Top 100 in Office Products)#5 in Utility Carts</td>
+					</tr>
+					<tr>
+						<td>Date First Available</td>
+						<td>September 1, 2021</td>
+					</tr>
+				</table>
+			</div>
+			<div class="stand-abt">
+				<div class="abt-heading"><h2>About this item</h2></div>
+				<div class="abt-list">
+					<ul>
+						<li>STURDY & DURABLE: With superior metal material and drilling installation, Powools towel rack is designed to withstand daily use and remain sturdy, ensuring long-lasting performance without deformation. The thick premium finish makes it waterproof and rustproof. Moreover, its smooth touch prevents your towels from snags, tears, and scratches.</li>
+						<li>VERSATILE USE: Powools bathroom towel rack offers a reliable solution for your towel hanging needs. It can be used not only in the bathroom for towels, bathrobes, and even clothes but also in the kitchen for dishcloths or on the sink for hand towels. Experience the versatility and convenience of our towel rack!</li>
+						<li>SPACE-SAVING DESIGN: Powools towel bar for bathroom wall is ingeniously designed to maximize space utilization. Featuring a compact size and wall-mounted design, this towel rack can be easily mounted on walls or cabinets, making it ideal for small bathrooms or limited spaces. Say hello to a neat and organized bathroom with the Powools towel rack.</li>
+						<li>STYLISH & MODERN: Powools shower towel holder features a contemporary style that effortlessly complements any interior decor. With clean lines and exquisite craftsmanship, this towel rack makes a stunning addition to any space, be it your porch, laundry room, bathroom, kitchen, toilet, office, and more. Let's enjoy the perfect blend of style and function.</li>
+						<li>EASY TO INSTALL & MAINTAIN: Each Powools towel rack is equipped with all the necessary mounting hardware and step-by-step instructions, ensuring a seamless installation process. In addition, the smooth surface of the rack allows cleaning and maintenance effortless. With just a simple wipe, you can easily keep them looking pristine.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+<!--Footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="ft-box1">
+
+				<ul>
+					<li><h1>Stay inspired and eco-conscious</h1></li><br>
+					<li><p>Receive the latest trends and tips on eco-friendly design, sustainable living, zero waste and eco-conscious practices.</p></li><br>
+				</ul>
+				<ul class="email">
+					<li><label style="font-size: 22px;">Email</label required/></li><br>
+					<li>
+						<input type="Email" name="Email" class="input">
+					</li><br>
+					<li>
+						<input type="checkbox" name="check" class="check">Yes, Subscribe me to your letter.
+					</li><br>
+					<li>
+						<button>Submit</button>
+					</li>
+				</ul>
+			</div>
+		
+		<div class="ft-box2 ft-box">
+			<ul>
+				<li>Home</li>
+				<li>Kitchen Items</li>
+				<li>Bathroom Accessories</li>
+			</ul>
+		</div>
+		<div class="ft-box3 ft-box">
+			<ul>
+				<li>Decoration things</li>
+				<li>Our Mission</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+		<div class="ft-box4 ft-box">
+			<ul>
+				<li>Terms & Conditions</li>
+				<li>Privacy Policy</li>
+				<li>Shipping Policy</li>
+				<li>Refund Policy</li>
+				<li>Cookie Policy</li>
+			</ul>
+		</div>
+	</div>
+		
+</body>
+</html>

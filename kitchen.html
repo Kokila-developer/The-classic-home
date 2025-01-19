@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kitchen Items</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="index.html">
+	<link rel="stylesheet" type="text/css" href="bath.html">
+	<link rel="stylesheet" type="text/css" href="decoration.html">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background-color: #fefaf0;
+		}
+		nav{
+	width: 100%;
+	display: flex;
+	background-color: #7d7978;
+	height: 80px;
+	justify-content: space-evenly;
+	align-items: center;
+	color: white;
+}
+.nav-heading{
+	font-size: 30px;
+	font-weight: 700;
+}
+.navbar-list ul{
+	display: flex;
+}
+.navbar-list ul li{
+	list-style-type: none;
+	padding: 0 20px;
+}
+.navbar-list ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+}
+.nav-icons .fa-solid{
+	padding: 0 10px;
+}
+.nav-icons{
+	display: flex;
+}
+.kitchen{
+	display: none;
+}
+.bath{
+	display: none;
+}
+.decor{
+	display: none;
+}
+.submenu-kit ul,
+.submenu-bat ul,
+.submenu-deco ul
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 120px;
+	border: 2px solid #e0d0cc;
+	text-align: center;
+	background-color: #7d7978;
+	margin-top: 20px;
+}
+.submenu-kit ul li,
+.submenu-bat ul li,
+.submenu-deco ul li
+{
+	padding: 10px 0;
+}
+.nav-btn{
+	display: none;
+}
+
+@media (max-width:900px){
+	nav{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 120px;
+	}
+	.navbar-list ul li{
+		list-style-type: none;
+		padding: 0 10px;
+	}
+}
+@media (max-width:700px){
+	nav{
+		width: 100%;
+	}
+	.navbar-list{
+/*		width: 100%;*/
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		text-align: center;
+
+
+}
+	.navbar-list ul {
+/*		width: 100%;*/
+		margin-top: 40px;
+		flex-direction: column;
+		position: absolute;
+		top: 100px;
+/*		border: 2px solid black;*/
+		background-color: #7d7978;
+/*		left: 40px;*/
+		width: 130px;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.nav-heading{
+		font-size: 20px;
+	}
+	.navbar-list ul li{
+		padding: 10px 0;
+	}
+	.nav-icons{
+		font-size: 20px;
+/*		margin-top: 20px;*/
+	}
+	.navbar-list ul li a{
+		font-size: 15px;
+	}
+	.nav-icons .fa-solid{
+		padding: 0 10px;
+	}
+	.hide{
+		display: none;
+	}
+	.nav-btn{
+		display: block;
+		font-size: 20px;
+		text-align: center;
+		width: 40px;
+		background-color: black;
+	}
+	.submenu-kit,
+	.submenu-bat,
+	.submenu-deco
+	{
+		position: absolute;
+		top: -80px;
+		left: 140px;
+	}
+	
+}
+
+		.container1 ul{
+			width: 100%;
+			display: flex;
+			list-style-type: none;
+			font-size: 20px;
+			border-bottom: 2px solid black;
+			background-color: rgba(152,150,144,0.3);
+		}
+		.container1 ul li:first-child{
+			margin-right: auto;
+			padding-left: 40px;
+		}
+		.container1 ul li:last-child{
+			margin-left: auto;
+			padding-right: 40px;
+		}
+		.left-container1 ul{
+			margin-top: 40px;
+			padding: 30px 0;
+			list-style-type: none;
+			display: flex;
+			font-size: 18px;
+			border-bottom: 2px solid black;
+			text-align: center;
+			background-color: rgba(152,150,144,0.3);
+		}
+		.left-container1 ul li a{
+			padding: 0 10px;
+			text-decoration: none;
+			color: black;
+		}
+		.left-container1 ul li a:hover{
+			text-decoration: underline;
+		}
+		.left-container2 ul{
+/*			border: 2px solid black;*/
+/*			width: 50%;*/
+			text-align: center;
+			list-style-type: none;
+			background-color:rgba(152,150,144,0.3);
+		}
+		.left-container2 ul li{
+			padding: 22px 0;
+		}
+		.left-container2 ul li:first-child{
+			border-bottom: 2px solid black;
+		}
+		.left-container2 ul li a{
+			color: black;
+			text-decoration: none;
+		}
+		.left-container2 ul li a:hover{
+			text-decoration: underline;
+		}
+		.left-container3 ul{
+/*			border: 2px solid black;*/
+/*			width: 50%;*/
+			text-align: center;
+			list-style-type: none;
+			background-color: rgba(152,150,144,0.3);
+		}
+		.left-container3 ul li{
+			padding: 10px 0;
+		}
+		.left-container3 ul li:first-child{
+			border-bottom: 2px solid black;
+		}
+		.left-container3 ul li a{
+			color: black;
+			text-decoration: none;
+		}
+		.left-container3 ul li a:hover{
+			text-decoration: underline;
+		}
+		.left-container3 #price{
+			display: flex;
+			justify-content: space-around;
+		}
+		.left-container3 #amt{
+			display: flex;
+			justify-content: space-around;
+		}
+		.left-container3 #size{
+			display: flex;
+			justify-content: space-around;
+		}
+		.home{
+			display: flex;
+			width: 100%;
+		}
+		.home-left{
+			width: 20%;
+		}
+		#products{
+			margin-top: 50px;
+/*			border: 2px solid black;*/
+			width: 80%;
+		}
+		.product-heading{
+			font-size: 35px;
+		}
+		.product-para{
+			width: 650px;
+			padding: 15px 0;
+			font-size: 18px;
+		}
+		.sort-by{
+			display: flex;
+			justify-content: space-between;
+			padding: 0 10px;
+			font-size: 17px;
+		}
+		.sort-by button{
+			padding: 10px 25px;
+			border-radius: 20px;
+			background-color: rgb(64, 63, 43);
+			color: white;
+		}
+		.product-list{
+			width: 100%;
+			margin-top: 30px;
+			display: grid;
+			justify-content: center;
+/*			border: 2px solid black;*/
+
+		}
+		.product-list ul{
+			
+/*			border: 2px solid black;*/
+			list-style-type: none;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			opacity: 0;
+			transition: 2s 0.2s linear;
+		}
+		.product-list ul li{
+			width: 240px;
+			height: 25vh;
+			margin: 35px 0;
+			padding: 0 20px;
+			text-align: center;
+			border-radius: 15px;
+			
+		}
+		.product-list ul li img{
+			width: 100%;
+			height: 100%;
+		}
+		.product-list ul li h2{
+			font-size: 18px;
+			color: brown;
+			font-weight: 500;
+		}
+		
+		
+		.home:hover{
+			.product-list ul{
+				opacity: 1;
+				transform: translateY(-40px);
+			}
+		}
+
+			
+		@media (max-width:991px){
+			.product-para{
+				width: 350px;
+			}
+			.product-list ul{
+				grid-template-columns: repeat(2, 1fr);
+			}
+			.left-container1 ul{
+				flex-direction: column;
+			}
+		}
+		@media (max-width:680px){
+			.container1 ul{
+				justify-content: center;
+				align-items: center;
+			}
+
+			.container1 ul li:first-child{
+				padding: 0;
+			}
+			.container1 ul li:last-child{
+				padding: 0;
+			}
+			.home{
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}
+			.home-left{
+				width: 60%;
+			}
+			.product-para{
+				width: 300px;
+			}
+			.product-list ul{
+				grid-template-columns: repeat(1, 1fr);
+			}
+			.product-list ul li{
+				width: 280px;
+			}
+		}
+			.steel-details{
+				display: flex;
+				justify-content: space-around;
+			}
+			.steel-details ul{
+				display: flex;
+				list-style-type: none;
+				font-size: 22px;
+				padding: 20px 0;
+			}
+			#prev{
+				position: relative;
+				width: 100%;
+				height: 50px;
+				appearance: none;
+				outline: none;
+			}
+			#prev:before{
+				content: '';
+				position: absolute;
+				height: 15px;
+				width: 15px;
+				border-right: 3px solid black;
+				border-bottom: 3px solid black;
+				transform: rotate(130deg);
+				left: -15px;
+				top: 5px;
+			}
+			#prev:after{
+				content: '';
+				position: absolute;
+				height: 15px;
+				width: 15px;
+				border-right: 3px solid black;
+				border-bottom: 3px solid black;
+				transform: rotate(320deg);
+				top: 5px;
+			}
+			.steel-details2,
+			#wooden-set,
+			#container-ctn{
+				display: flex;
+				width: 100%;
+				justify-content: space-evenly;
+				position: relative;
+				margin: 20px 0;
+			}
+			.steel-details{
+				position: sticky;
+			}
+			.steel-left{
+				width: 35%;
+				height: 45vh;
+				background-color:rgba(152,150,144,0.7);
+/*				border: 2px solid black;*/
+				text-align: center;
+				font-size: 18px;
+				border-radius: 15px;
+			}
+			.steel-left img{
+				width: 90%;
+				height: 90%;
+				margin-top: 10px;
+				border-radius: 15px;
+			}
+			.steel-left p{
+				margin: 40px 0;
+			}
+			.steel-right{
+				width: 50%;
+/*				border: 2px solid black;*/
+			}
+			.steel-right ul{
+				list-style-type: none;
+			}
+			.steel-right ul li{
+				padding: 10px 0;
+				font-size: 18px;
+			}
+			.steel-right ul li:first-child{
+				font-size: 22px;
+				font-weight: 900;
+				color: brown;
+			}
+			.steel-right ul li input{
+				width: 90px;
+				height: 30px;
+			}
+			.steel-right ul #btn1 button{
+				padding: 15px 150px;
+				border-radius: 30px;
+				background-color: brown;
+				color: white;
+				font-size: 18px;
+			}
+			.steel-right ul #btn2 button{
+				padding: 15px 160px;
+				border-radius: 30px;
+				background-color: transparent;
+				font-size: 18px;
+			}
+			@media (max-width:900px){
+				.steel-details2,
+				#wooden-set,
+				#container-ctn{
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+				.steel-right ul #btn1 button{
+					padding: 10px 50px;
+					font-size: 15px;
+				}
+				.steel-right ul #btn2 button{
+					padding: 10px 60px;
+					font-size: 15px;
+				}
+				.steel-left{
+					width: 60%;
+					height: 40vh;
+
+				}
+
+				.steel-right{
+					width: 90%;
+					margin-top: 100px;
+				}
+				.steel-right ul li{
+					padding: 5px 0;
+					text-align: center;
+				}
+			}
+			@media (max-width:650px){
+				.steel-right{
+					margin-top: 150px;
+				}
+				.steel-details{
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+				}
+			}
+			.footer .container{
+	background-color: #e8e59b;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.footer .container .box1{
+/*	border: 2px solid black;*/
+	width: 400px;
+	text-align: center;
+	padding: 60px 0;
+
+}
+.footer .container .box1 ul li{
+	list-style-type: none;
+}
+.footer .container .input{
+	padding: 5px 5px;
+}
+.footer .container button{
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: black;
+	color: white;
+}
+.footer .container button:hover{
+	background-color: white;
+	color: black;
+}
+.footer .container .box{
+	width: 150px;
+/*	border: 2px solid black;*/
+}
+.footer .container .box ul{
+	list-style-type: none;
+}
+.footer .container .box ul li{
+	padding: 10px 0;
+}
+@media (max-width:680px){
+	.footer .container{
+		flex-direction: column;
+	}
+	.footer .container .box1{
+		width: 330px;
+	}
+	.footer .container .box{
+		width: 300px;
+		text-align: center;
+		font-size: 17.5px;
+		margin-top: 25px;
+	}
+	.footer .container .box2,.box3{
+		border-bottom: 2px solid black;
+
+	}
+}
+	</style>
+			
+</head>
+<body>
+	<nav>
+		<div class="nav-heading">The Classic Home</div>
+		<div class="navbar-list hide">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="kitchen-hover"><a href="#">Kitchen Items</a>
+					<div class="submenu-kit kitchen">
+						<ul>
+							<li><a href="kitchen.html #kitchen-ctn">Kitchen Products</a></li>
+							<li><a href="kitchen.html #kitchen-steel">Stainless Steel</a></li>
+							<li><a href="kitchen.html #wooden-set">Wooden Cutlery Set</a></li>
+							<li><a href="kitchen.html #container-ctn">Kitchen container Set</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="bath-hover"><a href="#">Bathroom Accessories</a>
+					<div class="submenu-bat bath">
+						<ul>
+							<li><a href="bath.html">Bath Products</a></li>
+							<li><a href="bath.html #stand-nav">Bathroom Stands</a></li>
+							<li><a href="bath.html #mirror-nav">LED Mirrors</a></li>
+							<li><a href="bath.html #faucets-nav">Faucets</a></li>
+							<li><a href="bath.html #hanger-nav">Towel Hangers</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="decoration-hover"><a href="#">Decoration things</a>
+					<div class="submenu-deco decor">
+						<ul>
+							<li><a href="decoration.html">All Decors</a></li>
+							<li><a href="decoration.html #Vases-product">Vases</a></li>
+							<li><a href="decoration.html #lamp-product">Lamps</a></li>
+							<li><a href="decoration.html #walldecor-product">Wall decors</a></li>
+							<li><a href="decoration.html #curtain-product">Curtains</a></li>
+							<li><a href="decoration.html #bookshelve-product">Bookshelves</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li><a href="mission.html">Our Mission</a></li>
+				
+			</ul>
+		</div>
+		<div class="nav-icons"><i class="fa-solid fa-bag-shopping"></i>
+		<i class="fa-solid fa-truck"></i>
+		<div class="nav-btn"><i class="fa-solid fa-bars"></i></div></div>
+	</nav>
+	<script>
+		document.querySelector(".nav-btn").onclick=function(){
+			document.querySelector(".navbar-list").classList.toggle("hide");
+		}
+		document.querySelector(".kitchen-hover").onclick=function(){
+			document.querySelector(".submenu-kit").classList.toggle("kitchen");
+		}
+		document.querySelector(".bath-hover").onclick=function(){
+			document.querySelector(".submenu-bat").classList.toggle("bath");
+		}
+		document.querySelector(".decoration-hover").onclick=function(){
+			document.querySelector(".submenu-deco").classList.toggle("decor");
+		}
+	</script>
+<div id="kitchen-ctn">
+	
+	<div class="container1">
+		<ul>
+			<li>Menu</li>
+			<li>The Classic Home</li>
+			<li>Cart(0)&nbsp &nbsp &nbsp<i class="fa-solid fa-user"></i>&nbspLog In</li>
+		</ul>
+	</div>
+	<div class="home">
+	<div class="home-left">
+	<div class="left-container1">
+		<ul>
+		<li><a href="index.html">Home</a></li>
+		<li><i class="fa-solid fa-greater-than"></i></li>
+		<li><a href="kitchen">All Products</a></li>
+		</ul>
+	</div>
+	<div class="left-container2">
+		<ul>
+			<li>Browse By</li>
+			<li><a href="#products">All Products</a></li>
+			<li><a href="#steel">Stainless Steel</a></li>
+			<li><a href="#wooden">Wooden Cutlery Set</a></li>
+			<li><a  href="#container-set">Kitchen container Set</a></li>
+		</ul>
+	</div>
+	<div class="left-container3">
+		<ul>
+			<li>Filter by</li>
+			<li id="price">Price <i class="fa-solid fa-minus"></i></li>
+			<li><input type="range"></li>
+			<li id="amt">$5.00 <span>$25.00</span></li>
+			<li id="size">Size <i class="fa-solid fa-plus"></i></li>
+		</ul>
+	</div>
+	</div>
+	<div id="products">
+		<div class="product-heading">All Products</div>
+		<div class="product-para">This is your category description. It’s a great place to tell customers what this category is about, connect with your audience and draw attention to your products.</div>
+		<div class="sort-by"><button>19 products</button><button><span>Sort by:Recommended<i class="fa-solid fa-arrow-down-long"></i></span></button></div>
+		<div class="product-list">
+			
+				<div id="steel">
+					<ul>
+						<li><img src="steel1.jpg"><h2>Forks and Spoons set<br>$10.00</h2></li>
+						<li><img src="steel2.jpg"><h2>Pressure Cooker<br>$25.00</h2></li>
+						<li><img src="steel3.jpg"><h2>Induction Stove<br>$45.50</h2></li>
+						<li><img src="steel4.jpg"><h2>Non-stike pan & tawa set<br>$55.50</h2></li>
+						<li><img src="steel5.jpg"><h2>Ceramic cups & mugs<br>$45.50</h2></li>
+						<li><img src="steel6.jpg"><h2>Ceramic tiffen set<br>$35.50</h2></li>
+					</ul>
+				</div>
+				<div id="wooden">
+					<ul>
+						<li><img src="wooden1.jpg"><h2>Wooden Chopping Board<br>$25.50</h2></li>
+						<li><img src="wooden2.jpg"><h2>Wooden kitchen rake<br>$65.50</h2></li>
+						<li><img src="wooden3.jpg"><h2>Neem Wood Soup Bowl<br>$20.50</h2></li>
+						<li><img src="wooden4.jpg"><h2>Wooden Container Set<br>$20.70</h2></li>
+						<li><img src="wooden5.jpg"><h2>Wooden Dinning Table<br>$30.75</h2></li>
+						<li><img src="wooden6.jpg"><h2>Wooden Spoon Set<br>$10.70</h2></li>
+					</ul>
+				</div>
+				<div id="container-set">
+					<ul>
+						<li><img src="container1.jpg"><h2>plastic square container set<br>$20.70</h2></li>
+						<li><img src="container2.jpg"><h2>plastic Large container set<br>$30.85</h2></li>
+						<li><img src="container3.jpg"><h2>Glass Jar Container<br>$35.95</h2></li>
+						<li><img src="container4.jpg"><h2>Steel Container Set<br>$25.85</h2></li>
+						<li><img src="container5.jpg"><h2>wooden Container Set<br>$30.75</h2></li>
+						<li><img src="container6.jpg"><h2>ceramic Jar Container<br>$35.95</h2></li>
+					</ul>
+				</div>
+			
+		</div>
+	</div>
+	</div>
+	<!--product details-->
+	<div class="kitchen-details">
+		<div id="kitchen-steel">
+			<div class="steel-details">
+				<ul>
+					<li>Home/</li>
+					<li>Kitchen/</li>
+					<li>Stainless Steel/</li>
+				</ul>
+				<ul>
+					
+					<li id="prev">Prev | Next</li>
+				
+				</ul>
+			</div>
+			<div class="steel-details2">
+					<div class="steel-left">
+						<img src="steel1.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Forks and Spoons Set</h2></li>
+							<li>SKU: 001</li>
+							<li>$10.00</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div class="steel-details2">
+					<div class="steel-left">
+						<img src="steel2.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Pressure Cooker</h2></li>
+							<li>SKU: 002</li>
+							<li>$25.00</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div class="steel-details2">
+					<div class="steel-left">
+						<img src="steel3.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Induction Stove</h2></li>
+							<li>SKU: 003</li>
+							<li>$45.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div class="steel-details2">
+					<div class="steel-left">
+						<img src="steel4.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Ceramic cups & mugs</h2></li>
+							<li>SKU: 004</li>
+							<li>$45.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div class="steel-details2">
+					<div class="steel-left">
+						<img src="steel5.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Non-stike pan & tawa set</h2></li>
+							<li>SKU: 005</li>
+							<li>$55.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div class="steel-details2">
+					<div class="steel-left">
+						<img src="steel6.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Ceramic tiffen set</h2></li>
+							<li>SKU: 006</li>
+							<li>$35.00</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="wooden-set">
+					<div class="steel-left">
+						<img src="wooden1.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Wooden Chopping Board</h2></li>
+							<li>SKU: 007</li>
+							<li>$25.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="wooden-set">
+					<div class="steel-left">
+						<img src="wooden2.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Wooden kitchen rake</h2></li>
+							<li>SKU: 008</li>
+							<li>$65.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="wooden-set">
+					<div class="steel-left">
+						<img src="wooden3.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Neem Wood Soup Bowl</h2></li>
+							<li>SKU: 009</li>
+							<li>$25.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="wooden-set">
+					<div class="steel-left">
+						<img src="wooden4.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Wooden Container Set</h2></li>
+							<li>SKU: 010</li>
+							<li>$25.50</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="wooden-set">
+					<div class="steel-left">
+						<img src="wooden5.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Wooden Dining Table</h2></li>
+							<li>SKU: 011</li>
+							<li>$30.75</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="wooden-set">
+					<div class="steel-left">
+						<img src="wooden6.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Wooden Spoon Set</h2></li>
+							<li>SKU: 012</li>
+							<li>$10.70</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="container-ctn">
+					<div class="steel-left">
+						<img src="container1.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Plastic Square Container Set</h2></li>
+							<li>SKU: 013</li>
+							<li>$20.70</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="container-ctn">
+					<div class="steel-left">
+						<img src="container2.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Plastic Large Container Set</h2></li>
+							<li>SKU: 014</li>
+							<li>$30.85</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="container-ctn">
+					<div class="steel-left">
+						<img src="container3.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Glass Jar Container</h2></li>
+							<li>SKU: 015</li>
+							<li>$35.95</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="container-ctn">
+					<div class="steel-left">
+						<img src="container4.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Steel Container Set</h2></li>
+							<li>SKU: 016</li>
+							<li>$25.85</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="container-ctn">
+					<div class="steel-left">
+						<img src="container5.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Wooden Container Set</h2></li>
+							<li>SKU: 017</li>
+							<li>$30.75</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+			<div id="container-ctn">
+					<div class="steel-left">
+						<img src="container6.jpg">
+						<p>I'm a product description. I'm a great place to add more details about your product such as sizing, material, care instructions and cleaning instructions.</p>
+					</div>
+					<div class="steel-right">
+
+						<ul>
+							<li><h2>Ceramic Jar Container</h2></li>
+							<li>SKU: 018</li>
+							<li>$35.95</li>
+							<li>Quantity</li>
+							<li><input type="number" min="1" max="5" /></li>
+							<li id="btn1"><button>Add to Cart</button></li>
+							<li id="btn2"><button>Buy Now</button></li>
+							<li><h3>Product Info <span>-</span></h3></li>
+							<li><p>I'm a product detail. I'm a great place to add more information about your product such as sizing, material, care and cleaning instructions. This is also a great space to write what makes this product special and how your customers can benefit from this item.</p></li>
+							<li><h3>RETURN & REFUND POLICY<span>-</span></h3></li>
+							<li><p>I’m a Return and Refund policy. I’m a great place to let your customers know what to do in case they are dissatisfied with their purchase. Having a straightforward refund or exchange policy is a great way to build trust and reassure your customers that they can buy with confidence.</p></li>
+							<li><h3>SHIPPING INFO<span>-</span></h3></li>
+							<li><p>I'm a shipping policy. I'm a great place to add more information about your shipping methods, packaging and cost. Providing straightforward information about your shipping policy is a great way to build trust and reassure your customers that they can buy from you with confidence.</p></li>
+						</ul>
+					</div>
+			</div>
+		</div>
+	</div>
+	<!--Footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="box1">
+
+				<ul>
+					<li><h1>Stay inspired and eco-conscious</h1></li><br>
+					<li><p>Receive the latest trends and tips on eco-friendly design, sustainable living, zero waste and eco-conscious practices.</p></li><br>
+				</ul>
+				<ul class="email">
+					<li><label style="font-size: 22px;">Email</label required/></li><br>
+					<li>
+						<input type="Email" name="Email" class="input">
+					</li><br>
+					<li>
+						<input type="checkbox" name="check" class="check">Yes, Subscribe me to your letter.
+					</li><br>
+					<li>
+						<button>Submit</button>
+					</li>
+				</ul>
+			</div>
+		
+		<div class="box2 box">
+			<ul>
+				<li>Home</li>
+				<li>Kitchen Items</li>
+				<li>Bathroom Accessories</li>
+			</ul>
+		</div>
+		<div class="box3 box">
+			<ul>
+				<li>Decoration things</li>
+				<li>Our Mission</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+		<div class="box4 box">
+			<ul>
+				<li>Terms & Conditions</li>
+				<li>Privacy Policy</li>
+				<li>Shipping Policy</li>
+				<li>Refund Policy</li>
+				<li>Cookie Policy</li>
+			</ul>
+		</div>
+	</div>
+</div>
+</body>
+</html>

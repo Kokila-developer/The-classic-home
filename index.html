@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Home Goods Products</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="kitchen.html">
+	<link rel="stylesheet" type="text/css" href="bath.html">
+	<link rel="stylesheet" type="text/css" href="decoration.html">
+</head>
+<body>
+	<nav>
+		<div class="nav-heading">The Classic Home</div>
+		<div class="navbar-list hide">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="kitchen-hover"><a href="#">Kitchen Items</a>
+					<div class="submenu-kit kitchen">
+						<ul>
+							<li><a href="kitchen.html #kitchen-ctn">Kitchen products</a></li>
+							<li><a href="kitchen.html #kitchen-steel">Stainless Steel</a></li>
+							<li><a href="kitchen.html #wooden-set">Wooden Cutlery Set</a></li>
+							<li><a href="kitchen.html #container-ctn">Kitchen container Set</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="bath-hover"><a href="#">Bathroom Accessories</a>
+					<div class="submenu-bat bath">
+						<ul>
+							<li><a href="bath.html">Bath Products</a></li>
+							<li><a href="bath.html #stand-nav">Bathroom Stands</a></li>
+							<li><a href="bath.html #mirror-nav">FLED Mirrors</a></li>
+							<li><a href="bath.html #faucets-nav">Faucets</a></li>
+							<li><a href="bath.html #hanger-nav">Towel Hangers</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="decoration-hover"><a href="#">Decoration things</a>
+					<div class="submenu-deco decor">
+						<ul>
+							<li><a href="decoration.html">All Decors</a></li>
+							<li><a href="decoration.html #Vases-product">Vases</a></li>
+							<li><a href="decoration.html #lamp-product">Lamps</a></li>
+							<li><a href="decoration.html #walldecor-product">Wall decors</a></li>
+							<li><a href="decoration.html #curtain-product">Curtains</a></li>
+							<li><a href="decoration.html #bookshelve-product">Bookshelves</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li><a href="mission.html">Our Mission</a></li>
+				
+			</ul>
+		</div>
+		<div class="nav-icons"><i class="fa-solid fa-bag-shopping"></i>
+		<i class="fa-solid fa-truck"></i>
+		<div class="nav-btn"><i class="fa-solid fa-bars"></i></div></div>
+	</nav>
+	<script>
+		document.querySelector(".nav-btn").onclick=function(){
+			document.querySelector(".navbar-list").classList.toggle("hide");
+		}
+		document.querySelector(".kitchen-hover").onclick=function(){
+			document.querySelector(".submenu-kit").classList.toggle("kitchen");
+		}
+		document.querySelector(".bath-hover").onclick=function(){
+			document.querySelector(".submenu-bat").classList.toggle("bath");
+		}
+		document.querySelector(".decoration-hover").onclick=function(){
+			document.querySelector(".submenu-deco").classList.toggle("decor");
+		}
+	</script>
+	<!--homepage-->
+	<div class="home">
+		<div class="home-ctn">
+			<h1>THE CLASSIC HOME</h1>
+			<p>Home Essentials for Sustainable Living</p>
+			<button>Shop Now</button>
+		</div>
+	</div>
+	<div class="container">
+		
+			<div class="card-list">
+				<div class="card-item">
+					<img src="jar.webp">
+					<h2 class="user-name">Eco Glass</h2>
+					<p>$5.50</p>
+					<button>Shop Me</button>
+				
+				</div>
+				<div class="card-item">
+					<img src="bottle.webp">
+					<h2 class="user-name">Stainless Steel Bottle</h2>
+					<p>$25.50</p>
+					<button>Shop Me</button>
+				</div>
+
+				<div class="card-item spong">
+					<img src="spong.webp">
+					<h2 class="user-name">Kitchen Sponges</h2>
+					<p>$7.50</p>
+					<button>Shop Me</button>
+				</div>
+				
+
+				
+				<div class="card-item">
+					<img src="rake.jpg">
+					<h2 class="user-name">Natural Bamboo Rack</h2>
+					<p>$55.50</p>
+					<button>Shop Me</button>
+				</div>
+				<div class="card-item">
+					<img src="toothbrush.webp">
+					<h2 class="user-name">Bamboo Toothbrush</h2>
+					<p>$5.50</p>
+					<button>Shop Me</button>
+				</div>
+				<div class="card-item">
+					<img src="washbasin.jpg">
+					<h2 class="user-name">Table Top Washbasin</h2>
+					<p>$65.50</p>
+					<button>Shop Me</button>
+				</div>
+				
+
+			
+				<div class="card-item">
+					<img src="wood.webp">
+					<h2 class="user-name">Wood Brush</h2>
+					<p>$15.50</p>
+					<button>Shop Me</button>
+				</div>
+
+				<div class="card-item">
+					<img src="bag.jpg">
+					<h2 class="user-name">Cotton Mesh Bag</h2>
+					<p>$5.50</p>
+					<button>Shop Me</button>
+				</div>
+		
+			</div>
+		</div>
+	
+	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+	<!--The revert mission-->
+	<div class="mission-container">
+		<div class="mission-heading"><h1>The Re.vert Mission</h1></div>
+		<div class="mission-para1"><p>We believe in ethical and smart shopping. All of our products are carefully selected to ensure they align with our core values.</p></div>
+		<div class="mission-icon">
+		<ul>
+			<li><i class="fa-solid fa-trash"></i><br><br>Sustainable</li>
+			<li><i class="fa-solid fa-dumpster-fire"></i><br><br>Zero Waste</li>
+			<li><i class="fa-solid fa-seedling"></i><br><br>Vegan</li>
+			<li><i class="fa-solid fa-recycle"></i><br><br>Recycled</li>
+			<li><i class="fa-solid fa-handshake"></i><br><br>Fair Trade</li>
+		</ul>
+		</div>
+		<div class="mission-para2">
+			I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.<br><br><br>
+			This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.
+		</div>
+		<div class="mission-btn"><button>Learn More</button></div>
+	</div>
+	<!--Footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="box1">
+
+				<ul>
+					<li><h1>Stay inspired and eco-conscious</h1></li><br>
+					<li><p>Receive the latest trends and tips on eco-friendly design, sustainable living, zero waste and eco-conscious practices.</p></li><br>
+				</ul>
+				<ul class="email">
+					<li><label style="font-size: 22px;">Email</label required/></li><br>
+					<li>
+						<input type="Email" name="Email" class="input">
+					</li><br>
+					<li>
+						<input type="checkbox" name="check" class="check">Yes, Subscribe me to your letter.
+					</li><br>
+					<li>
+						<button>Submit</button>
+					</li>
+				</ul>
+			</div>
+		
+		<div class="box2 box">
+			<ul>
+				<li>Home</li>
+				<li>Kitchen Items</li>
+				<li>Bathroom Accessories</li>
+			</ul>
+		</div>
+		<div class="box3 box">
+			<ul>
+				<li>Decoration things</li>
+				<li>Our Mission</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+		<div class="box4 box">
+			<ul>
+				<li>Terms & Conditions</li>
+				<li>Privacy Policy</li>
+				<li>Shipping Policy</li>
+				<li>Refund Policy</li>
+				<li>Cookie Policy</li>
+			</ul>
+		</div>
+	</div>
+	
+</body>
+</html>

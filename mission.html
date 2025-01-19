@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Our Mission</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="kitchen.html">
+	<link rel="stylesheet" type="text/css" href="bath.html">
+	<link rel="stylesheet" type="text/css" href="decoration.html">
+	<link rel="stylesheet" type="text/css" href="index.html">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		nav{
+	width: 100%;
+	display: flex;
+	background-color: #7d7978;
+	height: 80px;
+	justify-content: space-evenly;
+	align-items: center;
+	color: white;
+}
+.nav-heading{
+	font-size: 30px;
+	font-weight: 700;
+}
+.navbar-list ul{
+	display: flex;
+}
+.navbar-list ul li{
+	list-style-type: none;
+	padding: 0 20px;
+}
+.navbar-list ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+}
+.nav-icons .fa-solid{
+	padding: 0 10px;
+}
+.nav-icons{
+	display: flex;
+}
+.kitchen{
+	display: none;
+}
+.bath{
+	display: none;
+}
+.decor{
+	display: none;
+}
+.submenu-kit ul,
+.submenu-bat ul,
+.submenu-deco ul
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 120px;
+	border: 2px solid #e0d0cc;
+	text-align: center;
+	background-color: #7d7978;
+	margin-top: 20px;
+}
+.submenu-kit ul li,
+.submenu-bat ul li,
+.submenu-deco ul li
+{
+	padding: 10px 0;
+}
+.nav-btn{
+	display: none;
+}
+
+@media (max-width:900px){
+	nav{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 120px;
+	}
+	.navbar-list ul li{
+		list-style-type: none;
+		padding: 0 10px;
+	}
+}
+@media (max-width:700px){
+	nav{
+		width: 100%;
+	}
+	.navbar-list{
+/*		width: 100%;*/
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		text-align: center;
+
+
+}
+	.navbar-list ul {
+/*		width: 100%;*/
+		margin-top: 40px;
+		flex-direction: column;
+		position: absolute;
+		top: 100px;
+/*		border: 2px solid black;*/
+		background-color: #7d7978;
+/*		left: 40px;*/
+		width: 130px;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.nav-heading{
+		font-size: 20px;
+	}
+	.navbar-list ul li{
+		padding: 10px 0;
+	}
+	.nav-icons{
+		font-size: 20px;
+/*		margin-top: 20px;*/
+	}
+	.navbar-list ul li a{
+		font-size: 15px;
+	}
+	.nav-icons .fa-solid{
+		padding: 0 10px;
+	}
+	.hide{
+		display: none;
+	}
+	.nav-btn{
+		display: block;
+		font-size: 20px;
+		text-align: center;
+		width: 40px;
+		background-color: black;
+	}
+	.submenu-kit,
+	.submenu-bat,
+	.submenu-deco
+	{
+		position: absolute;
+		top: -80px;
+		left: 140px;
+	}
+	
+}
+		.container1{
+			padding: 10px 0;
+			text-align: center;
+			background-color: rgb(196 193 151);
+			color: rgb(64 63 43);
+		}
+		.container1 ul li{
+			padding: 10px 0;
+		}
+		.container1 ul li h1{
+			font-size: 50px;
+		}
+		.container1 ul li p{
+			font-size: 18px;
+		}
+		.container1 .para3-list{
+			width: 100%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.container1 #para3{
+			text-align: justify;
+			width: 500px;
+		}
+		.container1 img{
+			width: 650px;
+			border-radius: 10px;
+		}
+		@media (max-width:700px){
+			.container1 img{
+				width: 350px;
+			}
+			.container1 #para3{
+				width: 300px;
+			}
+			.container1 ul li h1{
+				font-size: 35px;
+			}
+		}
+		.wrapper{
+			min-height: 100vh;
+			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			gap: 15px;
+			font-size: 20px;
+			background-color: #fefaf0;
+			color: rgb(64 63 43);
+		}
+		.header{
+			font-size: 35px;
+			font-weight: 800;
+		}
+		.header,.below,.content1,.content2>div>div{
+			flex: 1;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+/*			border: 2px solid black;*/
+		}
+		.main-container{
+			flex: 6;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 15px;
+		}
+		.content1{
+			display: flex;
+			flex-direction: column;
+		}
+		.content1 h3{
+			margin: 15px 0;
+		}
+		.content1 p{
+			margin: 15px 0;
+			width: 400px;
+		}
+		.content2{
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			flex-wrap: wrap;
+			gap: 15px;
+		}
+		.content2>div{
+			flex: 1;
+			display: flex;
+			justify-content: space-between;
+			flex-wrap: wrap;
+			gap: 15px;
+			
+		}
+		.content2>div>div{
+			border: 2px solid rgb(64 63 43);
+		}
+		.mission1{
+			background: url("team1.jpg");
+			background-size: cover;
+		}
+		.mission2{
+			background: url("team2.jpg");
+			background-size: cover;
+		}
+		.mission3{
+			background: url("team5.jpg");
+			background-size: cover;
+		}
+		.mission4{
+			background: url("team6.jpg");
+			background-size: cover;
+		}
+		@media (max-width:940px){
+			
+			.main-container>div{
+				min-height: 400px;
+			}
+			.content1{
+				flex: 100%;
+				height: 30vh;
+			}
+			.content2{
+				height: 50vh;
+			}
+			.header{
+				min-height: 90px;
+			}
+			
+			
+		}
+		@media (max-width:520px){
+			.content2>div{
+				flex-direction: column;
+			}
+			.content2>div>div{
+				min-height: 200px;
+			}
+			.content1 p{
+				width: 330px;
+			}
+		}
+		.footer .container{
+	background-color: #e8e59b;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.footer .container .box1{
+/*	border: 2px solid black;*/
+	width: 400px;
+	text-align: center;
+	padding: 60px 0;
+
+}
+.footer .container .box1 ul li{
+	list-style-type: none;
+}
+.footer .container .input{
+	padding: 5px 5px;
+}
+.footer .container button{
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: black;
+	color: white;
+}
+.footer .container button:hover{
+	background-color: white;
+	color: black;
+}
+.footer .container .box{
+	width: 150px;
+/*	border: 2px solid black;*/
+}
+.footer .container .box ul{
+	list-style-type: none;
+}
+.footer .container .box ul li{
+	padding: 10px 0;
+}
+@media (max-width:680px){
+	.footer .container{
+		flex-direction: column;
+	}
+	.footer .container .box1{
+		width: 330px;
+	}
+	.footer .container .box{
+		width: 300px;
+		text-align: center;
+		font-size: 17.5px;
+		margin-top: 25px;
+	}
+	.footer .container .box2,.box3{
+		border-bottom: 2px solid black;
+
+	}
+}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="nav-heading">The Classic Home</div>
+		<div class="navbar-list hide">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="kitchen-hover"><a href="#">Kitchen Items</a>
+					<div class="submenu-kit kitchen">
+						<ul>
+							<li><a href="kitchen.html #kitchen-ctn">Kitchen products</a></li>
+							<li><a href="kitchen.html #kitchen-steel">Stainless Steel</a></li>
+							<li><a href="kitchen.html #wooden-set">Wooden Cutlery Set</a></li>
+							<li><a href="kitchen.html #container-ctn">Kitchen container Set</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="bath-hover"><a href="#">Bathroom Accessories</a>
+					<div class="submenu-bat bath">
+						<ul>
+							<li><a href="bath.html">Bath Products</a></li>
+							<li><a href="bath.html #stand-nav">Bathroom Stands</a></li>
+							<li><a href="bath.html #mirror-nav">FLED Mirrors</a></li>
+							<li><a href="bath.html #faucets-nav">Faucets</a></li>
+							<li><a href="bath.html #hanger-nav">Towel Hangers</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="decoration-hover"><a href="#">Decoration things</a>
+					<div class="submenu-deco decor">
+						<ul>
+							<li><a href="decoration.html">All Decors</a></li>
+							<li><a href="decoration.html #Vases-product">Vases</a></li>
+							<li><a href="decoration.html #lamp-product">Lamps</a></li>
+							<li><a href="decoration.html #walldecor-product">Wall decors</a></li>
+							<li><a href="decoration.html #curtain-product">Curtains</a></li>
+							<li><a href="decoration.html #bookshelve-product">Bookshelves</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li><a href="mission.html">Our Mission</a></li>
+				
+			</ul>
+		</div>
+		<div class="nav-icons"><i class="fa-solid fa-bag-shopping"></i>
+		<i class="fa-solid fa-truck"></i>
+		<div class="nav-btn"><i class="fa-solid fa-bars"></i></div></div>
+	</nav>
+	<script>
+		document.querySelector(".nav-btn").onclick=function(){
+			document.querySelector(".navbar-list").classList.toggle("hide");
+		}
+		document.querySelector(".kitchen-hover").onclick=function(){
+			document.querySelector(".submenu-kit").classList.toggle("kitchen");
+		}
+		document.querySelector(".bath-hover").onclick=function(){
+			document.querySelector(".submenu-bat").classList.toggle("bath");
+		}
+		document.querySelector(".decoration-hover").onclick=function(){
+			document.querySelector(".submenu-deco").classList.toggle("decor");
+		}
+	</script>
+	<div class="mission">
+		<div class="container1">
+		<ul>
+			<li><h1>The Classic Home's<br> Mission</h1></li>
+			<li><p>Deliver Quality Products With Low Budget</p></li>
+			<li class="img1"><img src="trust2.webp"></li>
+			<li><p>We take care of the small details and believe that each daily action can make an impact.</p></li>
+			<li class="para3-list"><p id="para3">I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere you like on your page. I’m a great place for you to tell a story and let your users know a little more about you.​This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. Tell your visitors the story of how you came up with the idea for your business and what makes you different from your competitors. Make your company stand out and show your visitors who you are.</p></li>
+		</ul>
+		</div>
+		<div class="wrapper">
+			<div class="header">Meet Our Team</div>
+			<div class="main-container">
+				<div class="content1">
+					<h2>OUR MISSION</h2>
+					<h3>Redefining the Way We Move</h3>
+					<p>
+						OUR MISSION
+						Redefining the Way 
+						We Move
+
+						I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content and make changes to the font. I’m a great place for you to tell a story and let your users know a little more about you.
+
+						​
+
+						This is a great space to write a long text about your company and your services. You can use this space to go into a little more detail about your company. Talk about your team and what services you provide. </p>
+				</div>
+				<div class="content2">
+					<div class="subcontent1">
+						<div class="mission1"></div>
+						<div class="mission2"></div>
+					</div>
+					<div class="subcontent2">
+						<div class="mission3"></div>
+						<div class="mission4"></div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	<!--Footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="box1">
+
+				<ul>
+					<li><h1>Stay inspired and eco-conscious</h1></li><br>
+					<li><p>Receive the latest trends and tips on eco-friendly design, sustainable living, zero waste and eco-conscious practices.</p></li><br>
+				</ul>
+				<ul class="email">
+					<li><label style="font-size: 22px;">Email</label required/></li><br>
+					<li>
+						<input type="Email" name="Email" class="input">
+					</li><br>
+					<li>
+						<input type="checkbox" name="check" class="check">Yes, Subscribe me to your letter.
+					</li><br>
+					<li>
+						<button>Submit</button>
+					</li>
+				</ul>
+			</div>
+		
+		<div class="box2 box">
+			<ul>
+				<li>Home</li>
+				<li>Kitchen Items</li>
+				<li>Bathroom Accessories</li>
+			</ul>
+		</div>
+		<div class="box3 box">
+			<ul>
+				<li>Decoration things</li>
+				<li>Our Mission</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+		<div class="box4 box">
+			<ul>
+				<li>Terms & Conditions</li>
+				<li>Privacy Policy</li>
+				<li>Shipping Policy</li>
+				<li>Refund Policy</li>
+				<li>Cookie Policy</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>

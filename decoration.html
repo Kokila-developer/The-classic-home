@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Decoration Things</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" type="text/css" href="kitchen.html">
+	<link rel="stylesheet" type="text/css" href="bath.html">
+	<link rel="stylesheet" type="text/css" href="index.html">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		nav{
+	width: 100%;
+	display: flex;
+	background-color: #7d7978;
+	height: 80px;
+	justify-content: space-evenly;
+	align-items: center;
+	color: white;
+}
+.nav-heading{
+	font-size: 30px;
+	font-weight: 700;
+}
+.navbar-list ul{
+	display: flex;
+}
+.navbar-list ul li{
+	list-style-type: none;
+	padding: 0 20px;
+}
+.navbar-list ul li a{
+	text-decoration: none;
+	color: white;
+	font-size: 17px;
+}
+.nav-icons .fa-solid{
+	padding: 0 10px;
+}
+.nav-icons{
+	display: flex;
+}
+.kitchen{
+	display: none;
+}
+.bath{
+	display: none;
+}
+.decor{
+	display: none;
+}
+.submenu-kit ul,
+.submenu-bat ul,
+.submenu-deco ul
+{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	width: 120px;
+	border: 2px solid #e0d0cc;
+	text-align: center;
+	background-color: #7d7978;
+	margin-top: 20px;
+	z-index: 2;
+}
+.submenu-kit ul li,
+.submenu-bat ul li,
+.submenu-deco ul li
+{
+	padding: 10px 0;
+}
+.nav-btn{
+	display: none;
+}
+
+@media (max-width:900px){
+	nav{
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		height: 120px;
+	}
+	.navbar-list ul li{
+		list-style-type: none;
+		padding: 0 10px;
+	}
+}
+@media (max-width:700px){
+	nav{
+		width: 100%;
+	}
+	.navbar-list{
+/*		width: 100%;*/
+		display: flex;
+		justify-content: right;
+		align-items: center;
+		text-align: center;
+
+
+}
+	.navbar-list ul {
+/*		width: 100%;*/
+		margin-top: 40px;
+		flex-direction: column;
+		position: absolute;
+		top: 100px;
+/*		border: 2px solid black;*/
+		background-color: #7d7978;
+/*		left: 40px;*/
+		width: 130px;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+	.nav-heading{
+		font-size: 20px;
+	}
+	.navbar-list ul li{
+		padding: 10px 0;
+	}
+	.nav-icons{
+		font-size: 20px;
+/*		margin-top: 20px;*/
+	}
+	.navbar-list ul li a{
+		font-size: 15px;
+	}
+	.nav-icons .fa-solid{
+		padding: 0 10px;
+	}
+	.hide{
+		display: none;
+	}
+	.nav-btn{
+		display: block;
+		font-size: 20px;
+		text-align: center;
+		width: 40px;
+		background-color: black;
+	}
+	.submenu-kit,
+	.submenu-bat,
+	.submenu-deco
+	{
+		position: absolute;
+		top: -80px;
+		left: 140px;
+	}
+	
+}
+
+		.decor-bar{
+			display: flex;
+/*			justify-content: center;*/
+			align-items: center;
+			height: 60px;
+			background-color: #232f3e;
+		}
+		.decor-bar ul{
+			display: flex;
+			list-style-type: none;
+			color: white;
+			font-size: 17px;
+		}
+		.decor-bar ul li:first-child{
+			justify-content: flex-start;
+		}
+		.decor-bar ul li{
+			padding: 0 10px;
+		}
+		@media(max-width:500px){
+			.decor-bar ul li{
+				padding: 0 6px;
+			}
+			.decor-bar ul{
+				font-size: 15px;
+			}
+		}
+		.search{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.search-container{
+/*			width: 350px;*/
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 40px;
+			position: relative;
+			
+		}
+		.search-container input{
+			width: 350px;
+			font-size: 18px;
+			padding: 10px 20px;
+			border-radius: 25px;
+			border: 2px solid black;
+			background-color: rgba(241, 233, 231, 0,9);
+			box-shadow: 0px 10px 10px rgba(225, 209, 205, 0.6);
+			transition: 0.4s ease-in-out;
+			
+		}
+		.search-container input:hover{
+			border: 2px solid rgba(225, 209, 205, 0.6);
+		}
+		.search-container input:focus{
+			width: 450px;
+		}
+		.search-container i{
+			position: absolute;
+			right: 20px;
+			color: #555;
+			cursor: pointer;
+		}
+		@media (max-width:600px){
+			.search-container input{
+				width: 250px;
+			}
+			.search-container input:focus{
+				width: 350px;
+			}
+		}
+		.deals-images{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.deals-images ul{
+			width: 90%;
+			display: flex;
+			justify-content: space-evenly;
+			align-items: center;
+			list-style-type: none;
+/*			border: 2px solid #471c11;*/
+			margin-top: 20px;
+		}
+		#next{
+				position: relative;
+/*				width: 100%;*/
+/*				height: 70px;*/
+
+				
+		}
+		#next:before{
+			content: '';
+			position: absolute;
+			height: 25px;
+			width: 25px;
+			border-right: 3px solid black;
+			border-bottom: 3px solid black;
+			transform: rotate(130deg);
+			left: 10px;
+			
+
+		}
+		#next:after{
+			content: '';
+			position: absolute;
+			height: 25px;
+			width: 25px;
+			border-right: 3px solid black;
+			border-bottom: 3px solid black;
+			transform: rotate(320deg);
+			right: 10px;
+			
+
+		}
+		.deals-images ul li{
+			text-align: center;
+			width: 170px;
+			height: 30vh;
+			background-color: #471c11;
+			border: 3px solid #471c11;
+			font-weight: 800;
+		}
+		.deals-images ul li img{
+			width: 96%;
+			height: 100%;
+		}
+		.deals-heading{
+			font-size: 35px;
+			font-weight: 700;
+		}
+		.deals-subheading{
+			font-size: 25px;
+			font-weight: 500;
+			padding-left: 25px;
+			padding-top: 8px;
+		}
+		@media (max-width:991px){
+			.deals-images ul{
+				display: grid;
+				grid-template-columns: repeat(3, 1fr);
+				justify-items: center;
+				align-items: center;
+			}
+			.deals-images ul li{
+				margin-top: 20px;
+			}
+
+		}
+		@media (max-width:650px){
+			.deals-images ul{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				justify-items: center;
+				align-items: center;
+			}
+			.deals-images ul li{
+				margin-top: 20px;
+			}
+			#next:before{
+				display: none;
+			}
+			#next:after{
+				display: none;
+			}
+		}
+
+		.left-conatainer1,
+		.left-conatainer2,
+		.left-conatainer3{
+			margin-top: 40px;
+			width: 200px;
+			border: 2px solid black;
+			
+
+		}
+
+		.left-conatainer1 ul li,
+		.left-conatainer3 ul li{
+			padding: 10px 0;
+
+		}
+		.left-conatainer1 input,
+		.left-conatainer3 input{
+			margin: 0 6px;
+		}
+		.left-conatainer2 input{
+			margin: 0 6px;
+		}
+		.left-conatainer2 i{
+			padding: 0 5px;
+		}
+		.left-conatainer2 ul li{
+			padding: 6px 0;
+		}
+		.deals-left{
+			margin-top: 30px;
+/*			border: 2px solid black;*/
+			width: 15%;
+		}
+		.deals-products{
+			margin-top: 30px;
+/*			border: 2px solid black;*/
+			display: flex;
+		}
+		#Vases-product,
+		#lamp-product,
+		#walldecor-product,
+		#curtain-product,
+		#bookshelve-product{
+/*			margin-left: 30px;*/
+			width: 80%;
+/*			border: 2px solid black;*/
+		}
+		#Vases-product ul,
+		#lamp-product ul,
+		#walldecor-product ul,
+		#curtain-product ul,
+		#bookshelve-product ul{
+			display: flex;
+			justify-content: space-evenly;
+		}
+		#Vases-product ul li,
+		#lamp-product ul li,
+		#walldecor-product ul li,
+		#curtain-product ul li,
+		#bookshelve-product ul li{
+			width: 200px;
+			height: 30vh;
+			list-style-type: none;
+			justify-items: space-evenly;
+			align-items: center;
+			text-align: center;
+			border-radius: 10px;
+			
+		}
+		#Vases-product button,
+		#lamp-product button,
+		#walldecor-product button,
+		#curtain-product button,
+		#bookshelve-product button
+		{
+			padding: 5px;
+			margin: 0 5px;
+			background-color:#471c11;
+			color: white;
+		}
+		#Vases-product ul li img,
+		#lamp-product ul li img,
+		#walldecor-product ul li img,
+		#curtain-product ul li img,
+		#bookshelve-product ul li img{
+			width: 100%;
+			height: 100%;
+			border-radius: 10px;
+		}
+		.right-container{
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+		#lamp-product,
+		#walldecor-product,
+		#curtain-product,
+		#bookshelve-product{
+			margin-top: 40px;
+		}
+		@media (max-width:991px){
+			#Vases-product ul,
+			#lamp-product ul,
+			#walldecor-product ul,
+			#curtain-product ul,
+			#bookshelve-product ul{
+				display: grid;
+				grid-template-columns: repeat(2, 1fr);
+				justify-items: center;
+			}
+			#Vases-product ul li,
+			#lamp-product ul li,
+			#walldecor-product ul li,
+			#curtain-product ul li,
+			#bookshelve-product ul li{
+				width: 250px;
+				margin-top: 35px;
+			}
+			#Vases-product ul li img,
+			#lamp-product ul li img,
+			#walldecor-product ul li img,
+			#curtain-product ul li img,
+			#bookshelve-product ul li img{
+				width: 100%;
+			}
+		}
+		@media (max-width:800px){
+			.deals-products{
+				flex-direction: column;
+			}
+			.deals-left{
+				width: 100%;
+				display: flex;
+				justify-content: center;
+/*				align-items: center;*/
+			}
+			.deals-left ul{
+				list-style-type: none;
+			}
+		}
+		@media (max-width:600px){
+
+			#Vases-product ul li,
+			#lamp-product ul li,
+			#walldecor-product ul li,
+			#curtain-product ul li,
+			#bookshelve-product ul li{
+				width: 150px;
+				padding: 10px;
+				margin-top: 40px;
+			}
+			
+		}
+		.footer .container{
+	background-color: #e8e59b;
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.footer .container .box1{
+/*	border: 2px solid black;*/
+	width: 400px;
+	text-align: center;
+	padding: 60px 0;
+
+}
+.footer .container .box1 ul li{
+	list-style-type: none;
+}
+.footer .container .input{
+	padding: 5px 5px;
+}
+.footer .container button{
+	padding: 10px 30px;
+	border-radius: 25px;
+	background-color: black;
+	color: white;
+}
+.footer .container button:hover{
+	background-color: white;
+	color: black;
+}
+.footer .container .box{
+	width: 150px;
+/*	border: 2px solid black;*/
+}
+.footer .container .box ul{
+	list-style-type: none;
+}
+.footer .container .box ul li{
+	padding: 10px 0;
+}
+@media (max-width:680px){
+	.footer .container{
+		flex-direction: column;
+	}
+	.footer .container .box1{
+		width: 330px;
+	}
+	.footer .container .box{
+		width: 300px;
+		text-align: center;
+		font-size: 17.5px;
+		margin-top: 25px;
+	}
+	.footer .container .box2,.box3{
+		border-bottom: 2px solid black;
+
+	}
+}
+	</style>
+</head>
+<body>
+	<nav>
+		<div class="nav-heading">The Classic Home</div>
+		<div class="navbar-list hide">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li class="kitchen-hover"><a href="#">Kitchen Items</a>
+					<div class="submenu-kit kitchen">
+						<ul>
+							<li><a href="kitchen.html #kitchen-ctn">Kitchen Products</a></li>
+							<li><a href="kitchen.html #kitchen-steel">Stainless Steel</a></li>
+							<li><a href="kitchen.html #wooden-set">Wooden Cutlery Set</a></li>
+							<li><a href="kitchen.html #container-ctn">Kitchen container Set</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="bath-hover"><a href="#">Bathroom Accessories</a>
+					<div class="submenu-bat bath">
+						<ul>
+							<li><a href="bath.html">Bath Products</a></li>
+							<li><a href="bath.html #stand-nav">Bathroom Stands</a></li>
+							<li><a href="bath.html #mirror-nav">LED Mirrors</a></li>
+							<li><a href="bath.html #faucets-nav">Faucets</a></li>
+							<li><a href="bath.html #hanger-nav">Towel Hangers</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="decoration-hover"><a href="#">Decoration things</a>
+					<div class="submenu-deco decor">
+						<ul>
+							<li><a href="decoration.html">All Decors</a></li>
+							<li><a href="decoration.html #Vases-product">Vases</a></li>
+							<li><a href="decoration.html #lamp-product">Lamps</a></li>
+							<li><a href="decoration.html #walldecor-product">Wall decors</a></li>
+							<li><a href="decoration.html #curtain-product">Curtains</a></li>
+							<li><a href="decoration.html #bookshelve-product">Bookshelves</a></li>
+							
+						</ul>
+					</div>
+				</li>
+				<li><a href="mission.html">Our Mission</a></li>
+				
+			</ul>
+		</div>
+		<div class="nav-icons"><i class="fa-solid fa-bag-shopping"></i>
+		<i class="fa-solid fa-truck"></i>
+		<div class="nav-btn"><i class="fa-solid fa-bars"></i></div></div>
+	</nav>
+	<script>
+		document.querySelector(".nav-btn").onclick=function(){
+			document.querySelector(".navbar-list").classList.toggle("hide");
+		}
+		document.querySelector(".kitchen-hover").onclick=function(){
+			document.querySelector(".submenu-kit").classList.toggle("kitchen");
+		}
+		document.querySelector(".bath-hover").onclick=function(){
+			document.querySelector(".submenu-bat").classList.toggle("bath");
+		}
+		document.querySelector(".decoration-hover").onclick=function(){
+			document.querySelector(".submenu-deco").classList.toggle("decor");
+		}
+	</script>
+	<div class="decor-container">
+		<div class="decor-bar">
+			<ul>
+				<li><i class="fa-solid fa-bars"></i></li>
+				<li>All</li>
+				<li>Today's Deals</li>
+				<li>Customer Service</li>
+				<li>Registry</li>
+				<li>Gift Cards</li>
+				<li>Sell</li>
+			</ul>
+		</div>
+		<div class="search">
+			<div class="search-container">
+				<input type="text" name="search" placeholder="Search.....">
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</div>
+		</div>
+		<div class="deals">
+			<div class="deals-heading">Today's Deals</div>
+			<div class="deals-subheading">Must-have offers</div>
+			<div class="deals-images">
+				<ul id="next">
+					<li><img src="vases1.jpg">Vases</li>
+					<li><img src="lamp1.jpg">Lamps</li>
+					<li><img src="walldecor.jpg">Wall decors</li>
+					<li><img src="curtains.jpg">Curtains</li>
+					<li><img src="book.jpg">Book Shelves</li>
+				</ul>
+			</div>
+		</div>
+	<div class="deals-products">
+		<div class="deals-left">
+			<div class="left-conatainer1">
+				<ul>
+					<li><h3>Department</h3></li>
+					<li class="radio"><input type="radio" name="dept">Vases</li>
+					<li><input type="radio" name="dept">Lamps</li>
+					<li><input type="radio" name="dept">Wall decors</li>
+					<li><input type="radio" name="dept">Curtains</li>
+					<li><input type="radio" name="dept">Book Shelves</li>
+				</ul>
+			</div>
+			<div class="left-conatainer2">
+				<ul>
+					<li><h3>Customer Review</h3></li>
+					<li><input type="radio" name="review"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></li>
+					<li><input type="radio" name="review"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i></li>
+					<li><input type="radio" name="review"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></li>
+					<li><input type="radio" name="review"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i><i class="fa-regular fa-star"></i></li>
+				</ul>
+			</div>
+			<div class="left-conatainer3">
+				<ul>
+					<li><h3>Price</h3></li>
+					<li><input type="radio" name="price">All</li>
+					<li><input type="radio" name="price">Under $250</li>
+					<li><input type="radio" name="price">Under $450</li>
+					<li><input type="radio" name="price">Under $700</li>
+					<li><input type="radio" name="price">Under $1000</li>
+					<li><input type="radio" name="price">Under $2000</li>
+				</ul>
+			</div>
+		</div>
+		<div class="right-container">
+			<div id="Vases-product">
+				<ul>
+					<li><img src="bottlevases.jpg">
+						<button>53%  off</button>Bottle Vases</li>
+					<li><img src="metalvases.jpg">
+						<button>23%  off</button>Metal Vases</li>
+					<li><img src="ceramicvases.jpg">
+					<button>30%  off</button>Ceramic Vases</li>
+					<li><img src="painted vases.jpg">
+						<button>15%  off</button>Painted Vases</li>
+				</ul>
+			</div>
+			<div id="lamp-product">
+				<ul>
+					<li><img src="tablelamp.jpg">
+						<button>53%  off</button>Table Lamp</li>
+					<li><img src="woodlamp.jpg">
+						<button>23%  off</button>Wood Lamp</li>
+					<li><img src="studylamp.jpg">
+					<button>30%  off</button>Study Lamp</li>
+					<li><img src="walllamp.jpg">
+						<button>15%  off</button>Wall Lamp</li>
+				</ul>
+			</div>
+			<div id="walldecor-product">
+				<ul>
+					<li><img src="flowerdecor.jpg">
+						<button>53%  off</button>Flower Wall Decor</li>
+					<li><img src="clockdecor.jpg">
+						<button>23%  off</button>Clock Wall Decor</li>
+					<li><img src="textdecor.jpg">
+					<button>30%  off</button>Text Wall Decor</li>
+					<li><img src="lightdecor.jpg">
+						<button>15%  off</button>Light Wall Decor</li>
+				</ul>
+			</div>
+			<div id="curtain-product">
+				<ul>
+					<li><img src="astheticcurtain.jpg">
+						<button>53%  off</button>Asthetic Curtain</li>
+					<li><img src="velvetcurtain.jpg">
+						<button>23%  off</button>Velvet Curtain</li>
+					<li><img src="artcurtain.jpg">
+					<button>30%  off</button>Art Curtain</li>
+					<li><img src="lightcurtain.jpg">
+						<button>15%  off</button>Light Curtain</li>
+				</ul>
+			</div>
+			<div id="bookshelve-product">
+				<ul>
+					<li><img src="treebook.jpg">
+						<button>53%  off</button>Tree Book Shelves</li>
+					<li><img src="bookroom.jpg">
+						<button>23%  off</button>Book Room</li>
+					<li><img src="geometricbook.jpg">
+					<button>30%  off</button>Geometric Book Shelves</li>
+					<li><img src="wallbook.jpg">
+						<button>15%  off</button>Wall Book Shelves</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.querySelector(".radio").onclick=function(){
+			document.querySelector(".vases-product").classList.toggle("hide");
+		}
+	</script>
+	<!--Footer-->
+	<div class="footer">
+		<div class="container">
+			<div class="box1">
+
+				<ul>
+					<li><h1>Stay inspired and eco-conscious</h1></li><br>
+					<li><p>Receive the latest trends and tips on eco-friendly design, sustainable living, zero waste and eco-conscious practices.</p></li><br>
+				</ul>
+				<ul class="email">
+					<li><label style="font-size: 22px;">Email</label required/></li><br>
+					<li>
+						<input type="Email" name="Email" class="input">
+					</li><br>
+					<li>
+						<input type="checkbox" name="check" class="check">Yes, Subscribe me to your letter.
+					</li><br>
+					<li>
+						<button>Submit</button>
+					</li>
+				</ul>
+			</div>
+		
+		<div class="box2 box">
+			<ul>
+				<li>Home</li>
+				<li>Kitchen Items</li>
+				<li>Bathroom Accessories</li>
+			</ul>
+		</div>
+		<div class="box3 box">
+			<ul>
+				<li>Decoration things</li>
+				<li>Our Mission</li>
+				<li>Contact Us</li>
+			</ul>
+		</div>
+		<div class="box4 box">
+			<ul>
+				<li>Terms & Conditions</li>
+				<li>Privacy Policy</li>
+				<li>Shipping Policy</li>
+				<li>Refund Policy</li>
+				<li>Cookie Policy</li>
+			</ul>
+		</div>
+	</div>
+</body>
+</html>
